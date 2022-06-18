@@ -1,6 +1,8 @@
 package com.udacity.shoestore.ui.shoesList
 
-import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.Fragment
+import dagger.hilt.android.AndroidEntryPoint
 
-class ShoesListFragment : FragmentActivity() {
+@AndroidEntryPoint
+class ShoesListFragment : Fragment() {
 }

@@ -1,6 +1,8 @@
 package com.udacity.shoestore.ui.welcome
 
-import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.Fragment
+import dagger.hilt.android.AndroidEntryPoint
 
-class WelcomeFragment: FragmentActivity() {
+@AndroidEntryPoint
+class WelcomeFragment : Fragment() {
 }
