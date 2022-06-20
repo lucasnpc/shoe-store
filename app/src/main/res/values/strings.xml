@@ -3,4 +3,22 @@
     <string name="user_label">Username</string>
     <string name="password_label">Password</string>
     <string name="login_button">Log In</string>
+
+    <string name="welcome_title">Hello ! Welcome to Shoe Store App</string>
+
+    <string name="welcome_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+        volutpat a sapien eget consectetur. Fusce accumsan nibh ut urna eleifend, nec finibus massa
+        interdum. Donec consectetur felis eu nibh vehicula, et fermentum eros porta. Integer blandit
+        tempor sem quis congue. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+        Praesent egestas venenatis lacus, sed molestie risus cursus vel. Praesent porta id metus sit
+        amet pretium. Duis in eros mollis, sodales ipsum vitae, sodales neque. Phasellus finibus
+        commodo hendrerit. Pellentesque eleifend metus ac fringilla ultricies. Curabitur vitae
+        porttitor risus, nec suscipit risus. Nullam sit amet erat quis orci suscipit volutpat
+        bibendum nec neque. Aenean condimentum quam sed sollicitudin scelerisque. Suspendisse
+        commodo imperdiet dui sed fringilla. Interdum et malesuada fames ac ante ipsum primis in
+        faucibus. Cras consequat, ligula quis ultrices blandit, massa urna sagittis ligula, ac
+        hendrerit quam metus non augue.
+    </string>
+
+    <string name="welcome_button">Next page</string>
 </resources>
