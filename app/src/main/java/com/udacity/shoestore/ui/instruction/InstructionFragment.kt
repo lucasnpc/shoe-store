@@ -11,7 +11,7 @@ import com.udacity.shoestore.databinding.InstructionsLayoutBinding
 
 class InstructionFragment : Fragment() {
 
-    lateinit var binding: InstructionsLayoutBinding
+    private lateinit var binding: InstructionsLayoutBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,

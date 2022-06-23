@@ -23,4 +23,5 @@
     <string name="next_page_button">Next page</string>
 
     <string name="instructions_title">Hello ! Follow the instructions to use the app correctly</string>
+    <string name="fab_content_desc">Add Shoe</string>
 </resources>

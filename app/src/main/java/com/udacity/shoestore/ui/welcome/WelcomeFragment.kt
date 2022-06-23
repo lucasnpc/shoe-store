@@ -12,7 +12,7 @@ import com.udacity.shoestore.databinding.WelcomeLayoutBinding
 
 class WelcomeFragment : Fragment() {
 
-    lateinit var binding: WelcomeLayoutBinding
+    private lateinit var binding: WelcomeLayoutBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
