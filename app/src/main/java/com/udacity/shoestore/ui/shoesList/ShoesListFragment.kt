@@ -6,6 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
+import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.ShoeListLayoutBinding
 import com.udacity.shoestore.ui.shoesList.adapter.ShoeListAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -15,7 +18,7 @@ class ShoesListFragment : Fragment() {
 
     private lateinit var binding: ShoeListLayoutBinding
 
-    private val viewModel: ShoesListViewModel by viewModels()
+    private val viewModel: ShoesViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,9 +31,24 @@ class ShoesListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.getShoes()
+        val shoes = viewModel.getShoes()
         binding.shoesRecyclerView.apply {
-            adapter = ShoeListAdapter(listOf(), requireContext())
+            adapter = ShoeListAdapter(shoes, requireContext())
+            addItemDecoration(
+                DividerItemDecoration(
+                    requireContext(),
+                    DividerItemDecoration.HORIZONTAL
+                )
+            )
+            addItemDecoration(
+                DividerItemDecoration(
+                    requireContext(),
+                    DividerItemDecoration.VERTICAL
+                )
+            )
+        }
+        binding.fabAddShoe.setOnClickListener {
+            findNavController().navigate(R.id.action_shoesListFragment_to_shoeDetailFragment)
         }
     }
 }

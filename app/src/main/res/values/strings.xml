@@ -24,4 +24,11 @@
 
     <string name="instructions_title">Hello ! Follow the instructions to use the app correctly</string>
     <string name="fab_content_desc">Add Shoe</string>
+    <string name="shoe_description">Shoe Image</string>
+    <string name="save">Save</string>
+    <string name="image_url">Image URL</string>
+    <string name="description">Description</string>
+    <string name="company">Company</string>
+    <string name="shoe_size">Shoe Size</string>
+    <string name="shoe_name">Shoe Name</string>
 </resources>
