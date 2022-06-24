@@ -1,4 +1,4 @@
-package com.udacity.shoestore.ui.shoesList
+package com.udacity.shoestore.ui.shoeDetail
 
 import androidx.lifecycle.ViewModel
 import com.udacity.shoestore.domain.data.ShoesRepository
@@ -7,12 +7,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class ShoesViewModel @Inject constructor(private val repository: ShoesRepository) :
+class ShoeDetailsViewModel @Inject constructor(private val repository: ShoesRepository) :
     ViewModel() {
-
-    fun getShoes(): ArrayList<Shoe> {
-        return repository.getShoes()
-    }
 
     fun addShoe(shoe: Shoe) {
         repository.addShoe(shoe)

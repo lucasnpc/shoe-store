@@ -18,7 +18,7 @@ class ShoesListFragment : Fragment() {
 
     private lateinit var binding: ShoeListLayoutBinding
 
-    private val viewModel: ShoesViewModel by viewModels()
+    private val viewModel: ShoesListViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
