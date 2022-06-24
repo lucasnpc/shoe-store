@@ -10,7 +10,7 @@ import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.LoginLayoutBinding
 
 class LoginFragment : Fragment() {
-    lateinit var binding: LoginLayoutBinding
+    private lateinit var binding: LoginLayoutBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,

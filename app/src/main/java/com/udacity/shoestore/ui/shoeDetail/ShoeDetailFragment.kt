@@ -15,7 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class ShoeDetailFragment : Fragment() {
 
-    lateinit var binding: ShoeDetailLayoutBinding
+    private lateinit var binding: ShoeDetailLayoutBinding
 
     private val viewModel: ShoeDetailsViewModel by viewModels()
 
