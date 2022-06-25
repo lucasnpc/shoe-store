@@ -41,7 +41,7 @@ class ShoesListFragment : Fragment() {
         binding.topAppBar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.logout -> {
-                    findNavController().popBackStack()
+                    findNavController().navigate(R.id.action_shoesListFragment_to_loginFragment)
                     true
                 }
                 else -> false
