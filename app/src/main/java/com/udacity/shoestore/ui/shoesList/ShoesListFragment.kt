@@ -38,6 +38,15 @@ class ShoesListFragment : Fragment() {
         binding.fabAddShoe.setOnClickListener {
             findNavController().navigate(R.id.action_shoesListFragment_to_shoeDetailFragment)
         }
+        binding.topAppBar.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.logout -> {
+                    findNavController().popBackStack()
+                    true
+                }
+                else -> false
+            }
+        }
     }
 
     private fun setupRecyclerView() {
