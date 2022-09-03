@@ -51,7 +51,6 @@ class ShoesListFragment : Fragment() {
         lifecycleScope.launch {
             viewModel.shoes.collectLatest { shoes ->
                 shoes.forEach { shoe ->
-                    binding.shoe = shoe
                     val image = ImageView(requireContext()).apply {
                         load(
                             shoe.images[0]

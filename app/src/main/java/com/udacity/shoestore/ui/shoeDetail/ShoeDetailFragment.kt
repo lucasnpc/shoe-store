@@ -32,6 +32,12 @@ class ShoeDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setDisplayHomeAsUpEnabled(true)
+        binding.shoe = Shoe(
+            name = "Example",
+            size = 10.5,
+            company = "Example Company",
+            description = "Description 123 xyz"
+        )
         binding.buttonSave.setOnClickListener {
             saveShoe()
         }

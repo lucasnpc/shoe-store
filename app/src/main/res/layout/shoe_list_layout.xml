@@ -4,10 +4,6 @@
 
     <data>
 
-        <variable
-            name="shoe"
-            type="com.udacity.shoestore.domain.models.Shoe" />
-
     </data>
 
     <!--  Using Constraint layout to support scroll view and FAB  -->
