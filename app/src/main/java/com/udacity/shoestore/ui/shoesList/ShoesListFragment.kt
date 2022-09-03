@@ -1,13 +1,12 @@
 package com.udacity.shoestore.ui.shoesList
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -16,6 +15,7 @@ import coil.load
 import coil.transform.CircleCropTransformation
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.ShoeListLayoutBinding
+import com.udacity.shoestore.util.setDisplayHomeAsUpEnabled
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -39,22 +39,15 @@ class ShoesListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupRecyclerView()
+        setDisplayHomeAsUpEnabled(false)
+        setupData()
         binding.fabAddShoe.setOnClickListener {
             findNavController().navigate(R.id.action_shoesListFragment_to_shoeDetailFragment)
         }
-        binding.topAppBar.setOnMenuItemClickListener {
-            when (it.itemId) {
-                R.id.logout -> {
-                    findNavController().navigate(R.id.action_shoesListFragment_to_loginFragment)
-                    true
-                }
-                else -> false
-            }
-        }
+        requireActivity().addMenuProvider(menu, viewLifecycleOwner)
     }
 
-    private fun setupRecyclerView() {
+    private fun setupData() {
         lifecycleScope.launch {
             viewModel.shoes.collectLatest { shoes ->
                 shoes.forEach { shoe ->
@@ -95,6 +88,20 @@ class ShoesListFragment : Fragment() {
                     }
                 }
             }
+        }
+    }
+
+    private val menu = object : MenuProvider {
+        override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+            menuInflater.inflate(R.menu.shoes_list_menu, menu)
+        }
+
+        override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+            when (menuItem.itemId) {
+                R.id.logout -> findNavController().navigate(ShoesListFragmentDirections.actionShoesListFragmentToLoginFragment())
+                else -> return false
+            }
+            return true
         }
     }
 }

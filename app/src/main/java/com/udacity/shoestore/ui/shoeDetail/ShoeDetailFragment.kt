@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.databinding.ShoeDetailLayoutBinding
 import com.udacity.shoestore.domain.models.Shoe
+import com.udacity.shoestore.util.setDisplayHomeAsUpEnabled
 import com.udacity.shoestore.util.validateEmptyField
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -30,6 +31,7 @@ class ShoeDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setDisplayHomeAsUpEnabled(true)
         binding.buttonSave.setOnClickListener {
             saveShoe()
         }
