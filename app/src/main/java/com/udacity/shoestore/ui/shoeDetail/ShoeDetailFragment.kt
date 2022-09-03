@@ -36,7 +36,8 @@ class ShoeDetailFragment : Fragment() {
             name = "Example",
             size = 10.5,
             company = "Example Company",
-            description = "Description 123 xyz"
+            description = "Description 123 xyz",
+            listOf("https://static.netshoes.com.br/produtos/tenis-nike-sb-check-solar-cnvs-masculino/08/D12-2759-008/D12-2759-008_zoom1.jpg")
         )
         binding.buttonSave.setOnClickListener {
             saveShoe()
